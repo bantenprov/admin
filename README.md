@@ -11,3 +11,21 @@
 [![Daily Downloads](https://poser.pugx.org/bantenprov/admin/d/daily)](https://packagist.org/packages/bantenprov/admin)
 
 Admin
+
+
+### Edit `App\User.php`
+
+```php
+
+protected $hidden = [
+    'password', 'remember_token',
+];
+
+// ============
+
+public function admins()
+{
+    return $this->hasMany('Bantenprov\Admin\Models\AdminModel','user_id');
+}
+
+```
