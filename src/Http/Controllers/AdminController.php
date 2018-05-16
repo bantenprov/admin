@@ -112,15 +112,12 @@ class AdminController extends Controller
     {
 
         $request->validate([
-            'nama'      => 'required',
-            'type'      => 'required',
-            'user_id'   => 'required|unique:admins,id,'.$id,
+            'opd_id'        => 'required',
+            'user_id'       => 'required|unique:admins',
         ]);
 
         AdminModel::find($id)->update([
-            'uuid'      => Uuid::uuid5(Uuid::NAMESPACE_DNS, 'bantenprov.go.id'.date('YmdHis')),
-            'nama'      => $request->nama,
-            'type'      => $request->type,
+            'opd_id'      => $request->opd_id,
             'user_id'   => $request->user_id,
         ]);
 
