@@ -1,0 +1,39 @@
+{
+    "name": "bantenprov/admin",
+    "description": "Admin",
+    "authors": [
+        {
+            "name": "bantenprov",
+            "email": "developer.bantenprov@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "support": {
+      "source": "https://github.com/bantenprov/admin,",
+      "issues": "https://github.com/bantenprov/admin/issues",
+      "wiki": "https://github.com/bantenprov/admin/wiki"
+    },
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "5.5.*"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers/helpers.php"
+        ],
+        "psr-4": {
+            "Bantenprov\\Admin\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bantenprov\\Admin\\AdminServiceProvider"
+            ],
+            "aliases": {                
+                "Admin": "Bantenprov\\Admin\\Facades\\Admin"
+            }
+        }
+    }
+}
